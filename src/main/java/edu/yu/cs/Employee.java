@@ -19,9 +19,12 @@ public class Employee {
      */
 
     public Employee(String name, int potentialHours, String staffPosition, Double hourlyRate){
+        if (potentialHours <= 0 || hourlyRate <= 0){
+            throw new IllegalArgumentException("potential hours or hourly rate can not be <= 0");
+        }
         this.name =  name;
         this.potentialHours = potentialHours;
-        this.staffPosition = staffPosition;
+        setStaffPosition(staffPosition);
         this.hourlyRate = hourlyRate;
         this.onDuty = false;
     }
@@ -31,6 +34,9 @@ public class Employee {
      * @param hourlyRate
      */
     public void changeHourlyRate(double hourlyRate){
+        if (hourlyRate <= 0){
+            throw new IllegalArgumentException("potential hours can not be <= 0");
+        }
         this.hourlyRate = hourlyRate;
     }
 
@@ -43,6 +49,9 @@ public class Employee {
      * @param weeklyHours
      */
     public void setWeeklyHours(int weeklyHours){
+        if (weeklyHours <= 0){
+            throw new IllegalArgumentException("weekly hours can not be <= 0");
+        }
         this.weeklyHours = weeklyHours;
     }
 
@@ -55,9 +64,9 @@ public class Employee {
      * @param staffPosition
      * @throws IllegalAccessException
      */
-    private void setStaffPosition(String staffPosition) throws IllegalAccessException {
+    private void setStaffPosition(String staffPosition) {
         if (!staffPosition.equals("service") || !staffPosition.equals("kitchen") || !staffPosition.equals("cleaning")){
-            throw new IllegalAccessException("Postition must be service, kitchen, cleaning not " + staffPosition);
+            throw new IllegalArgumentException("Postition must be service, kitchen, cleaning not " + staffPosition);
 
         }
 
@@ -85,7 +94,6 @@ public class Employee {
      * @returns WeeklyHours * HourlyRate
      */
     public double getWeeklySalary(){
-        return this.weeklyHours * this.hourlyRate;
-
+        return this.weeklyHours * this.hourlyRate; 
     }
 }
