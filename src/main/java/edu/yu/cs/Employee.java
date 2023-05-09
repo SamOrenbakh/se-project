@@ -66,7 +66,7 @@ public class Employee {
      */
     private void setStaffPosition(String staffPosition) {
         if (!staffPosition.equals("service") || !staffPosition.equals("kitchen") || !staffPosition.equals("cleaning")){
-            throw new IllegalArgumentException("Postition must be service, kitchen, cleaning not " + staffPosition);
+            throw new IllegalArgumentException("Postition must be service, kitchen, or cleaning. Not: " + staffPosition);
 
         }
 
