@@ -12,7 +12,7 @@ public class Guest {
     int phoneNumber;
     int moneySpent;
     int daysBooked;
-    int daysLeftInRoom;
+    int  daysLeftInRoom;
     int checkInTime;
     String encodedCreditCard;
 
