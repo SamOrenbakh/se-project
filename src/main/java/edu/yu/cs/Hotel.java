@@ -22,6 +22,10 @@ public class Hotel {
     ArrayDeque<Room> RoomsThatNeedCleaning = new ArrayDeque<>();
     //queue representing service employees and whoever is on duty
     ArrayDeque<Employee> serviceEmployees = new ArrayDeque<>();
+    //queue of cleaning staff on duty
+    ArrayDeque<Employee> cleaningEmployees = new ArrayDeque<>();
+    //queue oof maintnence employees
+    ArrayDeque<Employee> maintenenceEmployees = new ArrayDeque<>();
     HashMap<Integer, Room> rooms = new HashMap<>();
 
     public void addRoom(Room room){
@@ -32,6 +36,20 @@ public class Hotel {
         LocalDate checkoutDay = LocalDate.parse(checkoutDate);
         rooms.get(roomNum).book(daysOfStay,checkoutDate, person);
     }
+
+    public void cleanARoom(){
+        cleaningEmployees.peekFirst();
+        RoomsThatNeedCleaning.pop();
+    }
+    public void maintenenceARoom(){
+        maintenenceEmployees.peekFirst();
+        RoomsReqMaintenence.pop();
+    }
+    public void serviceARoom(){
+        serviceEmployees.peekFirst();
+        RoomsReqRoomService.pop();
+    }
+
 
 
 }
