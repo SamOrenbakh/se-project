@@ -9,7 +9,7 @@ public class Room {
     private int roomPrice;
     private boolean isSpecialRoom;
     private String roomTitle;
-    private int checkoutTime;
+    private String checkoutDay;
     private Guest theGuest;
     int extraExpenses;
 
@@ -25,18 +25,18 @@ public class Room {
     public int getRoomPrice(){return this.roomPrice;}
     public boolean getRoomSpec(){return this.isSpecialRoom;}
     public String getRoomTitle(){return this.roomTitle;}
-    public int getCheckoutTime(){return this.checkoutTime;}
+    public String getCheckoutTime(){return this.checkoutDay;}
     public Guest getGuest(){return this.theGuest;}
 
 
     //method for creating booking
     //return if it got booked
-    public boolean book(int daysToBook, int checkout, Guest Guest){
+    public int book(int daysToBook, String checkout, Guest Guest){
         this.daysBooked = daysToBook;
-        this.checkoutTime = checkout;
+        this.checkoutDay = checkout;
         this.theGuest = Guest;
         this.isBooked = true;
-        return isBooked;
+        return this.roomNum;
     }
 
     public void setRoomPrice(int newPrice){
