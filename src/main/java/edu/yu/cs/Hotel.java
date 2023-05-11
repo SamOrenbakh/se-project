@@ -27,7 +27,7 @@ public class Hotel {
     //queue oof maintnence employees
     ArrayDeque<Employee> maintenenceEmployees = new ArrayDeque<>();
     HashMap<Integer, Room> rooms = new HashMap<>();
-
+//new comm
     public void addRoom(Room room){
         rooms.put(room.getRoomNum(), room);
     }
