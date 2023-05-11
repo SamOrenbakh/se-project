@@ -94,6 +94,6 @@ public class Employee {
      * @returns WeeklyHours * HourlyRate
      */
     public double getWeeklySalary(){
-        return this.weeklyHours * this.hourlyRate; 
+        return this.weeklyHours * this.hourlyRate;
     }
 }
